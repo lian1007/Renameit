@@ -68,7 +68,7 @@ root.configure(fg_color='#EDEDF2')
 root_frame = ctk.CTkFrame(root, fg_color='#EDEDF2')
 root_frame.pack(fill='x', padx=10, pady=10)
 
-photo = ctk.CTkImage(light_image=Image.open("open-folder.png"))
+photo = ctk.CTkImage(light_image=Image.open("Renameit/Assets/open-folder.png"))
 
 
 # 抓取位置按鈕
