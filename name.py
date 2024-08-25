@@ -59,7 +59,7 @@ def rename_and_sort_images():
         messagebox.showerror("錯誤", f"出現錯誤：{str(e)}")
 
 root = ctk.CTk()
-root.geometry("300x270")
+root.geometry("300x280")
 root.title("Renameit")
 
 # 修改背景色
@@ -76,8 +76,8 @@ btn_folderpath = ctk.CTkButton(root_frame,
                 font=font_style,
                 text="選取資料夾位置",
                 text_color="#191B1D",
-                fg_color="#D0E2F6",
-                hover_color="#E7E7E7",
+                fg_color="#FF8AEB",
+                hover_color="#FFC3F5",
                 image=photo,
                 command=wherethefolder,
                 height=35)
@@ -114,8 +114,8 @@ btn_go = ctk.CTkButton(root,
                 font=font_style,
                 text="✮⋆｡✩ 執行 ｡°✩⋆°✮",
                 text_color="#FFFFFF",
-                fg_color="#FF74C1",
-                hover_color="#FF97D1",
+                fg_color="#1A1A1A",
+                hover_color="#555555",
                 command=rename_and_sort_images,
                 height=35)
 btn_go.pack(padx=5, pady=10)
