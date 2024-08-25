@@ -1,9 +1,9 @@
 import os
 import shutil
-import tkinter as tkdeactivate
-from tkinter import filedialog, messagebox
+import tkinter as tk
+from tkinter import filedialog, messagebox,PhotoImage
 import customtkinter as ctk
-from PIL import Image
+from PIL import Image,ImageTk
 
 ctk.set_appearance_mode("light")
 font_style = ("Microsoft JhengHei", 12)
@@ -70,6 +70,7 @@ root_frame.pack(fill='x', padx=10, pady=10)
 
 photo = ctk.CTkImage(light_image=Image.open("Renameit/Assets/open-folder.png"))
 
+root.wm_iconbitmap("Renameit/Assets/icon.ico")
 
 # 抓取位置按鈕
 btn_folderpath = ctk.CTkButton(root_frame,
