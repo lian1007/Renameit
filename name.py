@@ -1,4 +1,5 @@
 import os
+import sys
 import shutil
 import tkinter as tk
 from tkinter import filedialog, messagebox,PhotoImage
@@ -7,6 +8,15 @@ from PIL import Image,ImageTk
 
 ctk.set_appearance_mode("light")
 font_style = ("Microsoft JhengHei", 12)
+
+def resource_path(relative_path):
+    """获取资源文件的路径，无论是打包后的exe文件还是未打包的脚本都适用"""
+    if hasattr(sys, '_MEIPASS'):
+        # 如果程序被打包，_MEIPASS 是打包后的临时文件夹路径
+        return os.path.join(sys._MEIPASS, relative_path)
+    else:
+        # 未打包时，直接返回相对路径
+        return os.path.join(os.path.abspath("."), relative_path)
 
 def wherethefolder():  # 抓取c路徑位置
     files = filedialog.askdirectory()
@@ -68,9 +78,10 @@ root.configure(fg_color='#EDEDF2')
 root_frame = ctk.CTkFrame(root, fg_color='#EDEDF2')
 root_frame.pack(fill='x', padx=10, pady=10)
 
-photo = ctk.CTkImage(light_image=Image.open("Renameit/Assets/open-folder.png"))
+image_path = resource_path('Assets/open-folder.png')
+photo = ctk.CTkImage(light_image=Image.open(image_path))
 
-root.wm_iconbitmap("Renameit/Assets/icon.ico")
+# root.wm_iconbitmap("Renameit/Assets/icon.ico")
 
 # 抓取位置按鈕
 btn_folderpath = ctk.CTkButton(root_frame,
